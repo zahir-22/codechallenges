@@ -573,27 +573,80 @@ import array as arr
 # creating another example
 
 
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.reference = None
+#
+#
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+#
+#         # traversing through the list
+#     def print_link_list(self):
+
+
+# arranging nodes
+
 class Node:
-    def __init__(self, data):
+    def __init__(self, data, next_n):
         self.data = data
-        self.reference = None
+        self.next_n = next_n
 
 
 class LinkedList:
     def __init__(self):
         self.head = None
 
-        # traversing through the list
-    def print_link_list(self):
+    def arranging(self):
+        runner = self.head
+        hopper = self.head
+        results = []
 
-        if self.head is None:
-            print("linked list is empty")
+        if runner is None:
+            return
 
-        else:
-            current_node = self.head
-            while current_node is not None:
-                print(current_node.data)
-                +
+        while runner:
+            runner = runner.next_n
+
+            while hopper:
+                hopper = hopper.next_n
+
+                if hopper.data < runner.data:
+                    results.append(hopper.data)
+                hopper = hopper.next_n
+
+        runner = runner.next_n
+
+        return results
+
+
+# create instance of the class and create a linkedlist
+linkedlist = LinkedList()
+node1 = Node(3)
+node2 = Node(5)
+node3 = Node(4)
+node4 = Node(1)
+node5 = Node(2)
+
+# linking the nodes
+node1.next_n = node2
+node2.next_n = node3
+node3.next_n = node4
+node4.next_n = node5
+
+# set the head of the list
+linkedlist.head = node1
+# calling the function
+results = LinkedList.arranging()
+
+# displaying the results
+print("arranged list is", results)
+
+
+
+
 
 
 

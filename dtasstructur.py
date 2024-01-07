@@ -1,54 +1,365 @@
-# add two numbers representing a linked list
+# # skip m number of elements delete n number of elements
+# def sk_delete(lists):
+#     x = lists[0]
+#     n = x + 1
+#     ll = []
+#     i = 0
+#     while i < len(lists):
+#         if i % n == 0:
+#             del lists[i:i+n]
+#         else:
+#             ll.append(lists[i])
+#         i += 1
+#     return ll
+#
+#
+# input_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# calling = sk_delete(input_list)
+# print(calling)
+#
+# # skip x delete y
+#
+#
+# def x_y(list2):
+#     x = list2[0]
+#     y = x + 1
+#     odd = []
+#     while y < len(list2):
+#         if y % 2 == 0:
+#             del list2[y]
+#         else:
+#             odd.append(list2[y])
+#         y += 1
+#     return odd
+#
+#
+# my_input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+# call = x_y(my_input)
+# print(call)
+#
+# # using linked list skip m delete n
+#
+# class Lists:
+#     def __init__(self, data, next_n):
+#         self.data = data
+#         self.next_n = next_n
+#
+#
+# class Linkedlist:
+#     def __init__(self):
+#         self.head = None
+#
+#     def delt_m(self, m, n):
+#         current = self.head
+#         count = 0
+#         result = 0
+#
+#         while current is not None and count < m:
+#             current = current.next
+#             count += 1
+#             result.append(current)
+#
+#         # delete n
+#         temp = current.next
+#         while count < n:
+#             if temp is None:
+#                 break
+#
+#             else:
+#                 temp = temp.next
+#
+#         current.next = temp
+#
+# # example two
+#
+#
+# # Using linked list: skip m, delete n
+#
+# class Node:
+#     def __init__(self, data=None, next_n=None):
+#         self.data = data
+#         self.next_n = next_n
+#
+#
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+#
+#     def delete_m_n(self, m, n):
+#         current = self.head
+#         count_m = 0
+#         count_n = 0
+#         result = []
+#
+#         # Traverse m nodes
+#         while current is not None and count_m < m:
+#             current = current.next_n
+#             count_m += 1
+#             result.append(current)
+#
+#         # Delete n nodes
+#         temp = current.next_n
+#         while count_n < n and temp is not None:
+#             temp = temp.next_n
+#             count_n += 1
+#
+#         # Update pointers to skip n nodes
+#         current.next_n = temp
+#
+# # example three
+# # skip m delete n
+#
+#
+# class Skip:
+#     def __init__(self, data, next_n):
+#         self.data = data
+#         self.next_n = next_n
+#
+#
+# class Lists:
+#     def __init__(self):
+#         self.head = None
+#
+#     def skip_delete(self, m, n):
+#         count_m = 0
+#         count_n = 0
+#         current = self.head
+#         results = []
+#
+#         if current is None:
+#             return
+#
+#         while current and count_m < m:
+#             current = current.next_n
+#             count_m += 1
+#             results.append(current)
+#
+#         temp = current.next_n
+#         while temp and count_n < n:
+#             temp = temp.next_n
+#
+#         current.next = temp
+#
+#
+# # create an instance of the class
+# linkedlist = Lists()
+# linkedlist.head = Node(1)
+# linkedlist.head.next_n = Node(2)
+# linkedlist.head.next_n.next_n = Node(3)
+# linkedlist.head.next_n.next_n.next_n = Node(4)
+# linkedlist.head.next_n.next_n.next_n.next_n = Node(5)
+# linkedlist.head.next_n.next_n.next_n.next_n.next_n = Node(6)
+#
+# # calling
+# print("linkedlist before deletion is", linkedlist.head.data)
+#
+#
+# current = linkedlist.head
+# while current:
+#     print(current.data, end='--->')
+#     current = current.next_n
+#
+#
+# print("linked list after deletion is")
+# linkedlist.skip_delete(2, 2)
+# current = linkedlist.head
+# while current:
+#     print(current.data, end='--->')
+#     current = current.next_n
 
-class Node:
-    def __init__(self, data, next_value=None):
+# find the intersection point of a singly linked list
+# first approach
+
+# class Inter:
+#     def __init__(self, data, next_n=None):
+#         self.data = data
+#         self.next_n = next_n
+#
+#
+# class Linkedlist:
+#     def __init__(self):
+#         self.head = None
+#
+#     def intersection(self, l1, l2):
+#         h1 = self.head
+#         h2 = self.head
+#
+#         if h1 is None:
+#             return h2
+#
+#         if h2 is None:
+#             return h1
+#
+#         while h1:
+#             h1 = h2
+#
+#             while h2 and h1 != h2:
+#                 temp = h1
+#                 # if both nodes are same
+#                 if temp == h2:
+#                     return h2
+#
+#                 temp = temp.next_n
+#                 h2 = h2.next_N
+#
+#             # intersection is not present between the list
+#         return None
+#
+#
+# ll1 = Linkedlist()
+# ll1.head = Inter(10)
+# ll1.head.next_n = Inter(15)
+# ll1.head.next_n.next_n = Inter(20)
+# ll1.head.next_n.next_n.next_n = Inter(30)
+# ll1.head.next_n.next_n.next_n.next_n = Inter(50)
+#
+# ll2 = Linkedlist()
+# ll2.head = Inter(10)
+# ll2.head.next_n = Inter(52)
+# ll2.head.next_n.next_n = ll1.head.next_n.next_n.next_n
+# ll2.head.next_n.next_n.next_n = Inter(12)
+# ll2.head.next_n.next_n.next_n.next_n = Inter(15)
+#
+# # print list before
+#
+# current1 = ll1
+# current2 = ll2
+#
+# ll1.intersection(l1=current1, l2=current2)
+# ll2.intersection(l1=current1, l2=current2)
+#
+# if not ll1 and ll2:
+#     print('no intersection point')
+# else:
+#     print('intersection found ', ll1, ll2)
+#
+#
+# # it gives error lets try another approach
+# # this approach is more time and space saving
+#
+# class Inters:
+#     def __init__(self, data, next_n):
+#         self.data = data
+#         self.next_n = next_n
+#
+# class Linkedlist:
+#     def __init__(self):
+#         self.head = None
+#
+#     def intersect(self, l1, l2):
+#         h1 = l1
+#         h2 = l2
+#
+#         while len(l1) > len(l2):
+#             h1 = h1.next
+#
+#         while len(l2) > len(l1):
+#             h2 = h2.next
+#
+#         while h1 and h2:
+#             h1 = h1.ext
+#             h2 = h2.next
+#
+#         if h2 == h1:
+#             print("there is intersection in the list")
+#         else:
+#             print("theres is no intersection in the list")
+#
+#
+# ll1 = Linkedlist()
+# ll1.head = Inter(20)
+# ll1.head.next_n = Inter(22)
+#
+# ll2 = Linkedlist(25)
+# ll2.head = Inter(50)
+# ll2.head.next_n = Inter(45)
+
+# call the function
+
+
+# write a code to check if a list is a palindrome or not
+class Pali:
+    def __init__(self, data, next_n=None):
         self.data = data
-        self.next_value = next_value
+        self.next_n = next_n
 
 
-class LinkedList:
+class Linkedlist:
     def __init__(self):
         self.head = None
 
-    def reverse(self, head):
+    def reverse(self):
 
-        previous = None
-        current = head
-        next_v = None
-
-        while current:
-            next_node = current.next
-            current.next = previous
-            previous = current
-            next_node = None
-
-        head = previous
-        return head
-
-    # function to add two numbers represented by linkedlist
-    def add_numbers(self, first, second):
-        # reverse the two lists
-        curr1 = self.reverse(first)
-        curr2 = self.reverse(second)
-
-        # res is the head node of the resultant list
-        summ = 0
-        carry = 0
-        res = None
         prev = None
+        current = self.head
 
-        # while both lists have at least one node
-        while curr1 is not None or curr2 is not None:
+#       # perform reverse
+        while current:
+            next_node = current.next_n
+            current.next_n = prev
+            prev = current
+            current = next_node
+        # making previous the current head
+        self.head = prev
 
-            # calculating the sum of the last digits
-            summ = carry + (curr1.data if curr1 else 0) + \
-                   (curr2.data if curr2 else 0)
+    def is_palindrome2(self):
 
-            # updating carry
-            carry = (1 if sum >= 10 else 0)
+        if self.head is None:
+            print('empty list is considered a palindrome')
+            return
 
-            # update sum if it is greater than 10
-            summ = summ % 10
+        slow = self.head
+        fast = self.head
+
+        while slow.next_n and fast.next_n.next_n:
+            slow = slow.next_n
+            fast = fast.next_n.next_n
+
+        second_half_head = slow.next_n
+        self.reverse()
+
+        # any of these 3 methods is valid because they all represent an instance of the class Linkedlist
+        # ll.reverse(second_half_head)
+
+        # when using the second half head instance you dont have to pass in as a parameter
+        # second_half_head.reverse()
+        # if we had specified a parameter in the reverse function we could do
+        second_half_head =
+        first_half_head = self.head
+
+
+        while first_half_head and second_half_head:
+            if first_half_head.data != second_half_head.data:
+                print("the list is not a palindrome")
+                return
+
+            first_half_head = first_half_head.next_n
+            second_half_head = second_half_head.next_n
+
+        print("the list is a palindrome")
+
+
+ll = Linkedlist()
+ll.head = Pali(0)
+ll.head.next_n = Pali(1)
+ll.head.next_n.next_n = Pali(2)
+ll.head.next_n.next_n.next_n = Pali(3)
+ll.head.next_n.next_n.next_n.next_n = Pali(4)
+ll.head.next_n.next_n.next_n.next_n.next_n = Pali(4)
+ll.head.next_n.next_n.next_n.next_n.next_n.next_n = Pali(3)
+ll.head.next_n.next_n.next_n.next_n.next_n.next_n.next_n = Pali(2)
+ll.head.next_n.next_n.next_n.next_n.next_n.next_n.next_n.next_n = Pali(1)
+ll.head.next_n.next_n.next_n.next_n.next_n.next_n.next_n.next_n.next_n = Pali(0)
+
+# print list
+current = ll.head
+while current:
+    print(current.data, end='--->')
+    current = current.next_n
+
+
+# calling the function to check if linked list is palindrome
+ll.is_palindrome2()
 
 
 
@@ -57,95 +368,254 @@ class LinkedList:
 
 
 
-        # reverse the list first
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# josephus problem
+#where n = number of people in the queue k the index position to be executed
+
+# formular =
+# josephus(n, k)
+# josephusproblem(n-1, k)+k-1)%n+1
 
 
 #
-#         if list1 is None:
-#             return list2
+# # add two numbers representing a linked list
+# class Solution:
+#     def __init__(self, data, next_node):
+#         self.data = data
+#         self.next_node = next_node
 #
-#         if list2 is None:
-#             return list1
 #
-#         current1 = list1
-#         current2 = list2
-#         new_node = Node(new_data)
+# class LinkedList:
+#
+#     def __init__(self):
+#         self.head = None
+#
+#     def reverse_list(self, head):
+#         prev = None
+#         current = head
+#         next_n = None
+#
+#         while current:
+#             next_n = current.next
+#             current.next = prev
+#             prev = current
+#             next_n = None
+#
+#         head = prev
+#         return head
+#
+#     def add_numbers(self, curr1, curr2):
+#         self.reverse_list(curr1)
+#         self.reverse_list(curr2)
+#
+#         carry = None
+#         summ = None
+#         new_node = None
+#
+#         while curr1 and curr2:
+#             summ = curr1 + curr2 + carry
+#
+#            # carry = (1 if summ >= 10 else 0)
+#
+#             # create a node to add if one list is longer than the other
+#             # if curr1 is none
+#             new_node = Node(curr2.data) if curr1 is None else curr1.next
+#             curr1.next = new_node
+#
+#             # if curr2 is none
+#             new_node = Node(curr1.data) if curr2 is None else curr2.next
+#             if curr2 is not None:
+#                 curr1 = new_node
+#             else:
+#                 curr2.next = new_node
+#
+#             summ = carry + summ if carry else summ
+#             carry = summ // 10
+#             summ = summ % 10
+#
+#             res_node = Node(summ)
+#             if summ is not None:
+#                 summ.next = res_node
+#                 res_node.next curr1 | curr2
+#
+#             list1 = curr1.next
+#             list2 = curr2.next
+# # example two
+#
+# class Solution:
+#     def __init__(self, data, next_value=None):
+#         self.data = data
+#         self.next_value = next_value
+#
+#
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+#
+#     def reverse(self, head):
+#
 #         previous = None
-#         adding = []
+#         current = head
+#         next_node = None
 #
-#         if current1 is not None:
-#             next_node = current1.next
-#             current1.next = previous
-#             previous = current1
-#             current1 = next_node
-#             prev_node = None
+#         while current:
+#             next_node = current.next
+#             current.next = previous
+#             previous = current
+#             next_node = None
+#
+#         head = previous
+#         return head
+#
+#     # function to add two numbers represented by linkedlist
+#     def add_numbers(self, first, second):
+#         # reverse the two lists
+#         curr1 = self.reverse(first)
+#         curr2 = self.reverse(second)
+#
+#         # res is the head node of the resultant list
+#         summ = 0
+#         carry = 0
+#         cur1_plus_cur2 = None
+#         prev = None
+#
+#         # while both lists have at least one node
+#         while curr1 is not None or curr2 is not None:
+#
+#             # calculating the sum of the last digits
+#             summ = carry + (curr1.data if curr1 else 0) + \
+#                    (curr2.data if curr2 else 0)
+#
+#             # updating carry
+#             carry = (1 if summ >= 10 else 0)
+#
+#             # update sum if it is greater than 10
+#             # these code is logically correct but wrong in this context   summ = (summ - 10 if summ >= 10 else summ)
+#             # or you can also say
+#             summ = summ % 10
+#
+#             # create a  new node with summ as data
+#             temp = Node(summ)
+#
+#             # if this is the first node then make set it as head of the resultant linked list
+#             # else if it is not the first node then connect it to the rest
+#
+#             if cur1_plus_cur2 is None:
+#                 cur1_plus_cur2 = temp
+#             else:
+#                 prev.next = temp
+#
+#             # this is equivalent to this code
+#             #cur1_plus_cur2 = temp if cur1_plus_cur2 is None else prev.next = temp
+#
+#             # set previous for next insertion
+#             prev = temp
+#
+#             # move first and second pointers to next node
+#             if curr1:
+#                 curr1 = curr1.next
+#
+#             if curr2:
+#                 curr2 = curr2.next
+#
+#         # if carry from prev sum is remaining
+#         if carry > 0:
+#             temp.next = Node(carry)
+#
+#             # reverse the resultant answer
+#             ans = self.reverse(cur1_plus_cur2)
+#             return ans
 #
 #
-#
-#         if  current1 is not None:
-#             next_node = current2.next
-#             current2.next = previous
-#             previous = current2
-#             current2 = next_node
-#
-#         while current1 and current2:
-#             adding = current1 + current2
-#             current1 = current1.next
-#             current2 = current1.next
-#             prev_node.next = current2
+# class Node:
+#     def __init__(self, data):
+#         self.daa = data
+#         self.next = None
 #
 #
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+#         self.tail = None
 #
-#             if current2 is None:
-#                 new_node = current2
-#                 prev_node.next = current2
-#                 adding = current1 + current2
-#                 current1 = current1.next
-#                 current2 = current2.next
+#     def insert(self, value):
+#
+#         if self.head is None:
+#             self.head = Node(value)
+#
+#         else:
+#             self.tail.next = Node(value)
+#             self.tail = self.tail.next
 #
 #
-# linkedlist = LinkedList()
-# list1 = head1
-# list1.next = Node(10)
-# list1.next.next = Node(15)
-# list1.next.next.next = Node(20)
-# list1.next.next.next.next = Node(25)
-# list1.next.next.next.next.next = Node(30)
+# # utility function to print the list
+# def printlist(n):
+#     while n:
+#         print(n.data, end='')
+#         n = n.next
+#     print()
 #
-# list2 = head2
-# list2.next = Node(50)
-# list2.next.next = Node(60)
-# list2.next.next.next = Node(80)
 #
-# linkedlist.add_numbers()
-# print(linkedlist)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# # driver code
+# if __name__ == "__main__":
+#     arr1 = [7, 5, 9, 4, 6]
+#     LL1 = LinkedList()
+#     for i in arr1:
+#         LL1.insert(i)
+#
+#     print("first list is ", end='')
+#     printlist(LL1.head)
+#
+#     arr2 = [8, 4]
+#     LL2 = LinkedList()
+#
+#     for i in arr2:
+#         LL2.insert(1)
+#     print("second list is ", end='')
+#
+#     # function call
+#     curr1_and_curr2 = Solution().addtwolists(LL1.head, LL2.head)
+#     print("resultant list is ", end='')
+#     print(curr1_and_curr2)
 
 
 
